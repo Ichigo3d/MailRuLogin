@@ -24,14 +24,14 @@ public class LoginMail extends BaseTest {
 			Thread.sleep(500);
 			assertEquals("Mail.Ru: почта, поиск в интернете, новости, игры", TestContext.getDriver().getTitle());//get title from page
 						
-			objLogin.setUserName("testtask1234");
-			objLogin.setUserPassword("Russia@1984");
+			objLogin.setUserName("youremail");
+			objLogin.setUserPassword("yourpassword");
 			String btn = "btnSbmit";
 			objLogin.clickBtn(btn);
 			Thread.sleep(1000);	
 			
 			objHomePage = new HomePage(TestContext.getDriver());
-			String exp = "testtask1234@mail.ru";
+			String exp = "youremail";
 			String res = objHomePage.getUserName();
 			assertEquals(exp, res);
 			System.out.println("Actual result is " + res + " Expected result is " + exp);
@@ -44,7 +44,7 @@ public class LoginMail extends BaseTest {
 			Thread.sleep(500);
 			assertEquals("Новое письмо - Почта Mail.Ru", TestContext.getDriver().getTitle());
 			
-			objLetter.setDest("soviet3d84@mail.ru");
+			objLetter.setDest("emaildestination");
 			
 			objLetter.setTopic("Test sending of letter");
 						
